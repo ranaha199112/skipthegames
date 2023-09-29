@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { API_URL } from "../config";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 function Security({ id }) {
   const router = useRouter();
@@ -35,7 +36,10 @@ function Security({ id }) {
       console.log("success", data);
       // toast.success("Login Succecssfull");
       formik.resetForm();
-      router.push("/account/email");
+      console.log("success", data);
+      toast.success("Login Succecssfull");
+      Cookies.remove("id");
+      // router.push("/account/email");
       // Cookies.remove("id");
       // Cookies.remove("email");
     } else {

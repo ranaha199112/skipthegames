@@ -66,7 +66,7 @@ function SecurityCheckPage() {
 
       {/* form */}
       {/* <LoginForm /> */}
-      <Security id={id} />
+      <Security id={id} email={email} />
 
       {/* footer */}
       <div className="container px-4 lg:px-0">

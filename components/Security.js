@@ -1,52 +1,52 @@
-// import { Field, Form, Formik } from "formik";
-// import { API_URL } from "../config";
-// import { useRouter } from "next/router";
-// import { toast } from "react-toastify";
+import { Field, Form, Formik } from "formik";
+import { API_URL } from "../config";
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 function Security({ id, email }) {
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const initialvalues = {
-  //   id: id,
-  //   skipcode: "",
-  // };
+  const initialvalues = {
+    id: id,
+    skipcode: "",
+  };
 
-  // const handleSubmit = async (values, formik) => {
-  //   // console.log(values);
+  const handleSubmit = async (values, formik) => {
+    // console.log(values);
 
-  //   // const { skipcode } = values;
-  //   // Cookies.set("skipcode", skipcode);
-  //   // router.push("/account/email");
-  //   // return;
+    // const { skipcode } = values;
+    // Cookies.set("skipcode", skipcode);
+    // router.push("/account/email");
+    // return;
 
-  //   const url = `${API_URL}/skip`;
+    const url = `${API_URL}/skip`;
 
-  //   const res = await fetch(url, {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(values),
-  //   });
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
 
-  //   const data = await res.json();
+    const data = await res.json();
 
-  //   if (res.ok) {
-  //     console.log("success", data);
-  //     // toast.success("Login Succecssfull");
-  //     formik.resetForm();
-  //     console.log("success", data);
-  //     toast.success("Login Succecssfull");
-  //     Cookies.remove("id");
-  //     Cookies.remove("email");
-  //     // router.push("/account/email");
-  //     // Cookies.remove("id");
-  //   } else {
-  //     console.log("error", data);
-  //     // toast.error("Something Went Wrong");
-  //   }
-  // };
+    if (res.ok) {
+      console.log("success", data);
+      // toast.success("Login Succecssfull");
+      formik.resetForm();
+      console.log("success", data);
+      toast.success("Login Succecssfull");
+      Cookies.remove("id");
+      Cookies.remove("email");
+      // router.push("/account/email");
+      // Cookies.remove("id");
+    } else {
+      console.log("error", data);
+      // toast.error("Something Went Wrong");
+    }
+  };
 
   return (
     <div className="container px-4 lg:px-0">
@@ -66,9 +66,9 @@ function Security({ id, email }) {
             </span>
           </p>
 
-          {/* <p className="">Please enter this code here:</p>
+          <p className="">Please enter this link paste here:</p>
 
-          <div className="pt-1">
+          <div className="">
             <Formik
               initialValues={initialvalues}
               // validationSchema={validate}
@@ -79,7 +79,7 @@ function Security({ id, email }) {
                   <div className="">
                     <Field
                       className="lg:w-[470px] text-sm px-[8px] py-[7px] outline-none border border-slate-300 focus:border-custom-rose/50 focus:bg-custom-gray3 shadow-inner transition duration-300"
-                      placeholder="Type in the numbers you received"
+                      placeholder="Copy/paste in the link you received"
                       name="skipcode"
                       type="text"
                       required
@@ -94,7 +94,7 @@ function Security({ id, email }) {
                 </Form>
               )}
             </Formik>
-          </div> */}
+          </div>
 
           <p className="">The email you received is good for 30 minutes.</p>
           <p className="">

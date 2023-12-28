@@ -14,14 +14,25 @@ function SecurityCheckPage() {
 
   return (
     <div className="">
-      <div className="px-4 lg:px-0">
+      {/* <div className="px-4 lg:px-0">
         <p className="container  mt-[.5px] mb-5 bg-custom-orange p-5 rounded text-[14.4px] font-bold">
           Providers, we do not send out text messages ever, do not click on
           links from them.
         </p>
-      </div>
+      </div> */}
 
       {/* header */}
+      <div className="pt-1 pb-2 px-4 lg:px-[85px] text-[13px] text-center bg-[#5F5F5F] text-white lg:leading-[28px]">
+        We use cookies, just to track visits to our website, we store no
+        personal details.{" "}
+        <span className="mt-2 lg:mt-0 px-3 py-2 block lg:inline rounded-sm bg-[#7daf3b] hover:bg-black transition-colors duration-300">
+          ACCEPT COOKIES
+        </span>{" "}
+        <span className="mt-4 lg:mt-0 block lg:inline underline hover:no-underline">
+          What are cookies?
+        </span>
+      </div>
+
       <div className="">
         <div className="container pt-[10px] pb-[27px] flex flex-col  items-center lg:flex-row lg:justify-between">
           <div className="lg:self-start mt-[3px] lg:mt-0">
@@ -36,7 +47,7 @@ function SecurityCheckPage() {
           </p>
 
           <div className="lg:self-end mt-2 lg:mt-0 text-end text-[14.4px]">
-            <p className="text-custom-gray4">Hi,</p>
+            {/* <p className="text-custom-gray4">Hi,</p> */}
             <p className="text-custom-rose underline font-bold">{email}</p>
             <div className="">
               <span className="text-custom-gray4 hover:text-custom-rose hover:underline cursor-pointer">
